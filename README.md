@@ -47,12 +47,35 @@ OPENQ_SUBGRAPH_WEBSOCKET_URL=ws://localhost:8001/subgraphs/name/openqdev/openq
 
 #### OpenQ-Frontend .env for Running without The Graph locally
 
+1. Checkout `mumbai` branch on `OpenQ-Fullstack` and `OpenQ-Frontend`
+
+2. In `OpenQ-Frontend/.env`:
+
 ```bash
 PAT=<YOUR PAT HERE>
 OPENQ_ID=5fbd39c6916b7efb63cc
 OPENQ_SUBGRAPH_HTTP_URL=https://api.thegraph.com/subgraphs/name/openqdev/openq-development
 OPENQ_SUBGRAPH_WEBSOCKET_URL=ws://localhost:8001/subgraphs/name/openqdev/openq-development
 ```
+
+In `OpenQ-Contracts/.env.contracts`:
+
+```bash
+OPENQ_ADDRESS="0x05c51563Fa3F3088f239060Fd782cb60D083281e"
+FAKE_TOKEN_ADDRESS="0x8d57166B3093c7E1631Bb1A248A8BA2B76Aea890"
+MOCK_TOKEN_ADDRESS="0x6075040CdA6E5C12483295D7287C8c44aBb0F975"
+```
+
+In `OpenQ-Contracts/.env`:
+
+```bash
+PROVIDER_URL=https://rpc-mumbai.maticvigil.com/v1/258e87c299409a354a268f96a06f9e6ae7ab8cea
+WALLET_KEY=<A PRIVATE KEY WITH SOME MUMBAI ON IT>
+CHAIN_ID=80001
+BLOCK_EXPLORER_BASE_URL="https://mumbai.polygonscan.com"
+```
+
+3. Then run `./boot.sh`
 
 ### OpenQ-Contracts .env
 
