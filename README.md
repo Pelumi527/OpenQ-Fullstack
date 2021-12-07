@@ -55,7 +55,7 @@ OPENQ_SUBGRAPH_WEBSOCKET_URL=ws://localhost:8001/subgraphs/name/openqdev/openq
 PAT=<YOUR PAT HERE>
 OPENQ_ID=5fbd39c6916b7efb63cc
 OPENQ_SUBGRAPH_HTTP_URL=https://api.thegraph.com/subgraphs/name/openqdev/openq-development
-OPENQ_SUBGRAPH_WEBSOCKET_URL=ws://localhost:8001/subgraphs/name/openqdev/openq-development
+OPENQ_SUBGRAPH_WEBSOCKET_URL=wss://api.thegraph.com/subgraphs/name/openqdev/openq-development
 ```
 
 In `OpenQ-Contracts/.env.contracts`:
@@ -76,6 +76,11 @@ BLOCK_EXPLORER_BASE_URL="https://mumbai.polygonscan.com"
 ```
 
 3. Then run `./boot.sh`
+
+4. Add MOCK and FAKE to your Mumbai Metamask wallet so you can use them for funding and checking refunds.
+
+5. YOU WILL HAVE ERRORS ONCE YOU CLICK ON AN ORGANIZATION! It comes from the fact that I've hardcoded a contract mapping since of course Mock Token and Fake don't
+exist in real life, and there's no contract mapping for Mumbai. This is part of the updates we need. Check out `useGetTokenValues` to edit it to make it work yet again.
 
 ### OpenQ-Contracts .env
 
